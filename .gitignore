@@ -37,8 +37,8 @@ local.properties
 .settings/
 .loadpath
 .recommenders
-#.classpath
-#.project
+.classpath
+.project
 .springBeans
 .gradle
 
