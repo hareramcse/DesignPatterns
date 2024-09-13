@@ -1,40 +1,35 @@
 package com.hs.creational.singleton;
 
-import java.util.ArrayList;
-import java.util.List;
+enum Customer {
+	INSTANCE;
 
-enum School {
-	HIGHSCHOOL;
-	List<String> teachers = new ArrayList<>();
+	private String name;
+	private String email;
 
-	School() {
-		teachers.add("Hareram");
-		teachers.add("Raghu");
-		teachers.add("Blue");
+	private Customer() {
+		this.name = "Default Name";
+		this.email = "default@example.com";
 	}
 
-	public String getTeachers() {
-		if (teachers.size() > 0) {
-			return teachers.remove(0);
-		} else {
-			return "No Teacher";
-		}
+	public String getDetails() {
+		return "Name: " + name + ", Email: " + email;
+	}
+
+	public void printDetails() {
+		System.out.println("Customer Details: " + getDetails());
 	}
 }
 
 public class SingletonByEnum {
-	String name, teacher;
-
-	public SingletonByEnum(String tutorialName) {
-		this.name = tutorialName;
-		School school = School.HIGHSCHOOL;
-		teacher = school.getTeachers();
-	}
-
 	public static void main(String[] args) {
-		for (int i = 0; i < 5; i++) {
-			SingletonByEnum first = new SingletonByEnum("Singleton " + i);
-			System.out.println(first.name + " has  teacher " + first.teacher);
-		}
+		Customer customer = Customer.INSTANCE;
+		customer.printDetails();
+
+		// Access the same instance again to show that it's a singleton
+		Customer anotherReference = Customer.INSTANCE;
+		anotherReference.printDetails();
+
+		// Confirm that both references point to the same instance
+		System.out.println("Are both references the same instance? " + (customer == anotherReference));
 	}
 }

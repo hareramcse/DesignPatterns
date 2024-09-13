@@ -1,6 +1,6 @@
 package com.hs.behavioral.visitor;
 
-public interface ItemElement {
+public interface CartItem {
 	public int accept(ShoppingCartVisitor visitor);
 }
 
