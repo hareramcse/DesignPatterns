@@ -15,6 +15,6 @@ public class InTransition implements PackageState {
 	@Override
 	public void updateState(DeliveryContext ctx) {
 		System.out.println("Package is in transition !!");
-		ctx.setCurrentState(OutForDelivery.instance());
+		ctx.setNextState(OutForDelivery.instance());
 	}
 }

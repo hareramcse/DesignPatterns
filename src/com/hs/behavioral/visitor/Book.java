@@ -1,7 +1,6 @@
 package com.hs.behavioral.visitor;
 
 public class Book implements CartItem {
-
 	private int price;
 	private String isbnNumber;
 

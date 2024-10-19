@@ -1,7 +1,6 @@
 package com.hs.behavioral.visitor;
 
 public class Fruit implements CartItem {
-
 	private int pricePerKg;
 	private int weight;
 	private String name;

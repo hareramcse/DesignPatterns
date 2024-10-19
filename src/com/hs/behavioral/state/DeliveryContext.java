@@ -1,23 +1,22 @@
 package com.hs.behavioral.state;
 
 public class DeliveryContext {
-	private PackageState currentState;
+	private PackageState nextState;
 	private String packageId;
 
-	public DeliveryContext(PackageState currentState, String packageId) {
-		this.currentState = currentState;
-		this.packageId = packageId;
-		if (currentState == null) {
-			this.currentState = Acknowledged.instance();
+	public DeliveryContext(PackageState nextState, String packageId) {
+		if (nextState == null) {
+			this.nextState = Acknowledged.instance();
 		}
+		this.packageId = packageId;
 	}
 
-	public PackageState getCurrentState() {
-		return currentState;
+	public PackageState getNextState() {
+		return nextState;
 	}
 
-	public void setCurrentState(PackageState currentState) {
-		this.currentState = currentState;
+	public void setNextState(PackageState nextState) {
+		this.nextState = nextState;
 	}
 
 	public String getPackageId() {
@@ -28,7 +27,7 @@ public class DeliveryContext {
 		this.packageId = packageId;
 	}
 
-	public void update(DeliveryContext ctx) {
-		currentState.updateState(ctx);
+	public void updateState(DeliveryContext ctx) {
+		nextState.updateState(ctx);
 	}
 }

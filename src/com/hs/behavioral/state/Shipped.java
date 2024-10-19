@@ -15,6 +15,6 @@ public class Shipped implements PackageState {
 	@Override
 	public void updateState(DeliveryContext ctx) {
 		System.out.println("Package is shipped !!");
-		ctx.setCurrentState(InTransition.instance());
+		ctx.setNextState(InTransition.instance());
 	}
 }

@@ -3,8 +3,8 @@ package com.hs.behavioral.proxy;
 public class RealBankAccount implements BankAccount {
 	private double balance;
 
-	public RealBankAccount(double initialBalance) {
-		this.balance = initialBalance;
+	public RealBankAccount(double balance) {
+		this.balance = balance;
 	}
 
 	@Override

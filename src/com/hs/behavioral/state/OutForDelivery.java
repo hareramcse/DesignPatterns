@@ -15,6 +15,6 @@ public class OutForDelivery implements PackageState {
 	@Override
 	public void updateState(DeliveryContext ctx) {
 		System.out.println("Package is out of delivery !!");
-		ctx.setCurrentState(Delivered.instance());
+		ctx.setNextState(Delivered.instance());
 	}
 }
